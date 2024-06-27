@@ -1,0 +1,24 @@
+#ETL
+#Utilizando o pyenv, temos o numpy nesse arquivo
+#Ferramenta de processamento: Pandas - Polars - Duckdb - Spark - Dask
+#Ferramenta de qualidade: Pydantic (Linha a Linha ou uma API) - Pandera (SQL, DF)
+import pandas as pd
+import os
+import glob
+
+"""
+Uma função de Extract que lê e consolida os jsons
+"""
+pasta = 'data'
+arquivos_json = glob.glob(os.path.join(pasta, '*json'))
+df_list = [pd.read_json(arquivo) for arquivo in arquivos_json]
+print(df_list)
+
+
+
+"""
+Uma função de Transform que 
+"""
+"""
+Uma função que dá load em csv ou parquet
+"""
